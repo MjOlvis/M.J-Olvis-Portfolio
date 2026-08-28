@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Michael Jeffrey Olvis - Cost Consultant & QS</title>
+  <title>Michael Jeffrey Olvis - Cost Consultant & QS Portfolio</title>
   <style>
     /* --- CSS RESET & VARIABLES --- */
     * {
@@ -93,11 +93,13 @@
       font-size: 0.95rem;
       transition: all 0.2s ease;
       display: inline-block;
+      cursor: pointer;
     }
 
     .btn-primary {
       background-color: var(--accent-color);
       color: #0b131e;
+      border: none;
     }
 
     .btn-primary:hover {
@@ -266,6 +268,7 @@
       flex-direction: column;
       justify-content: space-between;
       min-height: 120px;
+      cursor: pointer;
     }
 
     .boq-card:hover {
@@ -288,6 +291,96 @@
     .boq-sub {
       font-size: 0.8rem;
       color: var(--text-muted);
+    }
+
+    /* --- MODAL LIGHTBOX STYLES --- */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(11, 19, 30, 0.85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      width: 90%;
+      max-width: 900px;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-header {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .modal-close {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .modal-close:hover {
+      color: var(--accent-color);
+    }
+
+    .modal-body {
+      padding: 24px;
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+
+    .sample-preview-box {
+      width: 100%;
+      min-height: 350px;
+      background: #0d1724;
+      border: 1px dashed var(--card-border);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .sample-preview-box img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
     }
 
     /* --- WORKFLOW SECTION --- */
@@ -461,3 +554,169 @@
             </div>
             <span class="exp-date">Jun 2022 – Jun 2024</span>
           </div>
+          <p style="font-size:0.85rem; color: var(--accent-color); margin-bottom: 8px;">High-Rise, Commercial & Residential Projects</p>
+          <ul class="exp-bullets">
+            <li>Prepared detailed material estimates, BOQs, and unit pricing for US-based bidding and tender processes.</li>
+            <li>Liaised directly with clients, contractors, and bidders to clarify project scope and tender requirements.</li>
+            <li>Generated detailed CAD working drawings and structural details for specialized Stairs, Fences, and Guardrails to support on-site execution.</li>
+          </ul>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">Cost Engineer</div>
+              <div class="exp-company">DATEM Inc. | Philippines</div>
+            </div>
+            <span class="exp-date">Jan 2021 – Apr 2022</span>
+          </div>
+          <p style="font-size:0.85rem; color: var(--accent-color); margin-bottom: 8px;">NSCR Project - Infrastructure</p>
+          <ul class="exp-bullets">
+            <li>Developed cost data, bid proposals, and contract negotiations to support competitive project acquisitions.</li>
+            <li>Evaluated subcontractor and vendor quotations against project specifications and budget constraints.</li>
+            <li>Monitored project financial trends, prepared weekly/monthly cost performance reports, and identified schedule and budget risks.</li>
+            <li>Implemented standardized cost-recording procedures and change control protocols to maintain budget integrity throughout the project lifecycle.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="samples">
+      <div class="section-tag">BOQ & Takeoff Library</div>
+      <h2>Clickable Sample Library</h2>
+      <p class="description">
+        Click on any category to view sample quantity takeoffs, BOQ structures, and measurement sheets directly inside the site.
+      </p>
+
+      <div class="boq-grid">
+        <div class="boq-card" onclick="openSampleModal('Civil & Demolition', 'Earthworks, site preparation, cut & fill quantity takeoffs.', 'sample-civil.jpg')">
+          <div class="boq-number">01</div>
+          <div class="boq-title">Civil & Demolition</div>
+          <div class="boq-sub">Earthworks & Site prep</div>
+        </div>
+        <div class="boq-card" onclick="openSampleModal('Highways & Pavements', 'Asphalt, base coarse, curbing, and road furniture measurements.', 'sample-highways.jpg')">
+          <div class="boq-number">02</div>
+          <div class="boq-title">Highways & Pavements</div>
+          <div class="boq-sub">Roadways & Surfacing</div>
+        </div>
+        <div class="boq-card" onclick="openSampleModal('Structural Concrete', 'Concrete volume, rebar weight schedule, and formwork area.', 'sample-concrete.jpg')">
+          <div class="boq-number">03</div>
+          <div class="boq-title">Structural Concrete</div>
+          <div class="boq-sub">Reinforcement & Formwork</div>
+        </div>
+        <div class="boq-card" onclick="openSampleModal('Metalworks & Stairs', 'Specialized stairs, fences, guardrails, and structural steel detailing.', 'sample-metal.jpg')">
+          <div class="boq-number">04</div>
+          <div class="boq-title">Metalworks & Stairs</div>
+          <div class="boq-sub">Fences, Guardrails, Details</div>
+        </div>
+        <div class="boq-card" onclick="openSampleModal('Architectural Finishes', 'Wall, floor, and ceiling finish schedules and quantity summaries.', 'sample-finishes.jpg')">
+          <div class="boq-number">05</div>
+          <div class="boq-title">Architectural Finishes</div>
+          <div class="boq-sub">Floors, Walls & Ceilings</div>
+        </div>
+        <div class="boq-card" onclick="openSampleModal('Doors, Windows & Glazing', 'Comprehensive door/window schedules and glazing hardware counts.', 'sample-doors.jpg')">
+          <div class="boq-number">06</div>
+          <div class="boq-title">Doors, Windows & Glazing</div>
+          <div class="boq-sub">Schedule takeoffs</div>
+        </div>
+        <div class="boq-card" onclick="openSampleModal('Variation Orders & Cashflow', 'Contract modification pricing, interim billings, and cashflow reports.', 'sample-cashflow.jpg')">
+          <div class="boq-number">07</div>
+          <div class="boq-title">Variation Orders</div>
+          <div class="boq-sub">Cost Claims & Cashflow</div>
+        </div>
+        <div class="boq-card" onclick="openSampleModal('CAD Detailing Outputs', 'Structural details and shop drawings for fabrication and installation.', 'sample-cad.jpg')">
+          <div class="boq-number">08</div>
+          <div class="boq-title">CAD Detailing Outputs</div>
+          <div class="boq-sub">Working drawings & details</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-tag">Process</div>
+      <h2>Estimating Workflow</h2>
+
+      <div class="workflow-grid">
+        <div class="workflow-step">
+          <span class="step-number">01</span>
+          <span class="step-desc">Review drawings and specifications</span>
+        </div>
+        <div class="workflow-step">
+          <span class="step-number">02</span>
+          <span class="step-desc">Confirm scope and identify missing details</span>
+        </div>
+        <div class="workflow-step">
+          <span class="step-number">03</span>
+          <span class="step-desc">Verify drawing scale and measurement accuracy</span>
+        </div>
+        <div class="workflow-step">
+          <span class="step-number">04</span>
+          <span class="step-desc">Perform detailed quantity takeoffs</span>
+        </div>
+        <div class="workflow-step">
+          <span class="step-number">05</span>
+          <span class="step-desc">Cross-check quantities and bulk totals</span>
+        </div>
+        <div class="workflow-step">
+          <span class="step-number">06</span>
+          <span class="step-desc">Prepare structured BOQ for pricing</span>
+        </div>
+        <div class="workflow-step">
+          <span class="step-number">07</span>
+          <span class="step-desc">Final QA review before submission</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-tag">Credentials</div>
+      <h2>Education & Affiliations</h2>
+
+      <div class="experience-list" style="margin-top: 20px;">
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">Bachelor of Science in Civil Engineering</div>
+              <div class="exp-company">Pamantasan ng Lungsod ng Valenzuela, Philippines</div>
+            </div>
+            <span class="exp-date">2015 – 2020</span>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">Certifications & Professional Affiliations</div>
+            </div>
+          </div>
+          <ul class="exp-bullets">
+            <li><strong>Licensed Civil Engineer</strong> – Philippine Civil Engineering Board Exam Passer (Nov 2022)</li>
+            <li><strong>Graduate Member / TPICQS</strong> – Philippine Institute of Certified Quantity Surveyors</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="modal-overlay" id="sampleModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-title" id="modalTitle">Sample Title</span>
+        <button class="modal-close" onclick="closeSampleModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p id="modalDesc" style="color: var(--text-muted); margin-bottom: 16px; font-size: 0.95rem;"></p>
+        <div class="sample-preview-box" id="modalPreview">
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openSampleModal(title, description, imageFile) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalDesc').innerText = description;
+      
+      const previewBox
