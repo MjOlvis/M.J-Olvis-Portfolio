@@ -7,19 +7,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            /* Corporate Civil Engineering Palette */
-            --primary: #0f172a;        /* Steel Navy */
-            --primary-light: #1e293b;  /* Deep Slate */
-            --accent: #2563eb;         /* Engineering Blue */
-            --accent-gold: #d97706;    /* Concrete / Safety Amber */
-            --bg: #f8fafc;             /* Light Concrete Tint */
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --bg: #f8fafc;
             --surface: #ffffff;
-            --text: #334155;           /* Charcoal Text */
-            --text-muted: #64748b;     /* Muted Blueprint Slate */
-            --border: #cbd5e1;         /* Structural Frame Border */
-            --border-light: #e2e8f0;
-            --shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -1px rgba(15, 23, 42, 0.03);
-            --radius: 6px;             /* Crisp technical corners */
+            --text: #334155;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --radius: 8px;
         }
 
         * {
@@ -36,62 +34,38 @@
         }
 
         .container {
-            max-width: 1140px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
 
-        /* --- Blueprint Header / Hero --- */
+        /* Header / Hero */
         header {
             background-color: var(--primary);
-            /* Subtle Blueprint Grid Pattern Background */
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-            background-size: 24px 24px;
             color: white;
             padding: 4.5rem 0 3.5rem;
-            border-bottom: 4px solid var(--accent);
         }
 
         .hero {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 2.5rem;
+            gap: 2rem;
             flex-wrap: wrap;
         }
 
-        .hero-text {
-            flex: 1;
-            min-width: 320px;
-        }
-
         .hero-text h1 {
-            font-size: 2.6rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
             letter-spacing: -0.025em;
-            color: #ffffff;
         }
 
         .hero-text h2 {
             font-size: 1.25rem;
             color: #94a3b8;
             font-weight: 500;
-            margin-bottom: 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .hero-text h2::before {
-            content: '';
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background: var(--accent-gold);
-            border-radius: 50%;
+            margin-bottom: 1.5rem;
         }
 
         .badges {
@@ -102,34 +76,33 @@
         }
 
         .badge-cert {
-            background: rgba(37, 99, 235, 0.15);
-            color: #93c5fd;
-            border: 1px solid rgba(147, 197, 253, 0.3);
+            background: rgba(37, 99, 235, 0.2);
+            color: #60a5fa;
+            border: 1px solid rgba(96, 165, 250, 0.3);
             padding: 0.35rem 0.85rem;
-            border-radius: 4px;
+            border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
-            letter-spacing: 0.02em;
         }
 
         .hero-contact {
             display: flex;
-            gap: 0.75rem;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
-        .hero-contact a, .hero-contact span {
+        .hero-contact a {
             color: white;
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.85rem;
-            background: rgba(255, 255, 255, 0.06);
-            padding: 0.5rem 0.9rem;
-            border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.2s;
         }
 
         .hero-contact a:hover {
@@ -137,64 +110,10 @@
             border-color: var(--accent);
         }
 
-        /* Hero Profile Frame */
-        .profile-photo-container {
-            width: 180px;
-            height: 180px;
-            border-radius: 6px;
-            border: 3px solid var(--accent);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
-            overflow: hidden;
-            background: var(--primary-light);
-            flex-shrink: 0;
-            position: relative;
-        }
-
-        .profile-photo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* --- Executive Metrics Scorecard --- */
-        .metrics-bar {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            margin-top: -2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            divide-x: 1px solid var(--border-light);
-            overflow: hidden;
-            position: relative;
-            z-index: 10;
-        }
-
-        .metric-item {
-            padding: 1.25rem;
-            text-align: center;
-        }
-
-        .metric-value {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--primary);
-            display: block;
-        }
-
-        .metric-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* --- Sticky Engineering Nav --- */
+        /* Navigation */
         nav {
             background: var(--surface);
-            border-bottom: 2px solid var(--border-light);
+            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -210,11 +129,10 @@
             text-decoration: none;
             color: var(--text-muted);
             font-weight: 600;
-            font-size: 0.95rem;
-            padding: 1.1rem 0;
+            padding: 1rem 0;
             display: block;
-            border-bottom: 3px solid transparent;
-            transition: all 0.2s ease;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
         }
 
         .nav-links a:hover,
@@ -223,20 +141,17 @@
             border-bottom-color: var(--accent);
         }
 
-        /* --- Main Content Sections --- */
+        /* Main Sections */
         section {
-            padding: 3.5rem 0;
+            padding: 4rem 0;
         }
 
         .section-title {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: var(--primary);
-            margin-bottom: 1.75rem;
+            margin-bottom: 2rem;
             position: relative;
             display: inline-block;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
         }
 
         .section-title::after {
@@ -244,89 +159,21 @@
             position: absolute;
             left: 0;
             bottom: -6px;
-            width: 45px;
+            width: 40px;
             height: 3px;
-            background: var(--accent-gold);
+            background: var(--accent);
+            border-radius: 2px;
         }
 
-        /* Profile Card */
+        /* About / Summary */
         .profile-card {
             background: var(--surface);
             padding: 2rem;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            border: 1px solid var(--border-light);
-            border-left: 4px solid var(--accent);
+            border: 1px solid var(--border);
             font-size: 1.05rem;
-            line-height: 1.75;
-        }
-
-        /* Projects Portfolio Grid */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .project-card {
-            background: var(--surface);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 20px -4px rgba(15, 23, 42, 0.12);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 190px;
-            overflow: hidden;
-            background-color: #cbd5e1;
-            position: relative;
-        }
-
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover .project-image img {
-            transform: scale(1.04);
-        }
-
-        .project-content {
-            padding: 1.25rem;
-        }
-
-        .project-category {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: var(--accent-gold);
-            letter-spacing: 0.05em;
-            margin-bottom: 0.3rem;
-        }
-
-        .project-content h3 {
-            font-size: 1.1rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .project-content p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.5;
+            line-height: 1.7;
         }
 
         /* Competencies & Tools Grid */
@@ -341,12 +188,11 @@
             padding: 1.5rem;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            border: 1px solid var(--border-light);
-            border-top: 3px solid var(--primary-light);
+            border: 1px solid var(--border);
         }
 
         .skill-card h3 {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--primary);
             margin-bottom: 1rem;
             display: flex;
@@ -365,16 +211,15 @@
         }
 
         .tag {
-            background: #f1f5f9;
-            color: #334155;
-            border: 1px solid #cbd5e1;
+            background: #eff6ff;
+            color: #1e40af;
             padding: 0.35rem 0.75rem;
             border-radius: 4px;
             font-size: 0.85rem;
             font-weight: 500;
         }
 
-        /* Timeline Experience */
+        /* Experience Timeline */
         .timeline {
             position: relative;
             padding-left: 2rem;
@@ -392,18 +237,18 @@
 
         .timeline-item {
             position: relative;
-            margin-bottom: 2.25rem;
+            margin-bottom: 2.5rem;
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
             left: -2.35rem;
-            top: 0.35rem;
+            top: 0.3rem;
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: var(--accent-gold);
+            background: var(--accent);
             border: 3px solid var(--surface);
         }
 
@@ -421,8 +266,7 @@
 
         .timeline-header h3 {
             color: var(--primary);
-            font-size: 1.15rem;
-            font-weight: 700;
+            font-size: 1.2rem;
         }
 
         .company-name {
@@ -431,13 +275,11 @@
         }
 
         .date-badge {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
             background: #f1f5f9;
             padding: 0.2rem 0.6rem;
             border-radius: 4px;
-            font-weight: 600;
-            border: 1px solid var(--border-light);
         }
 
         .timeline-body ul {
@@ -455,33 +297,27 @@
         .jurisdiction-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.25rem;
+            gap: 1rem;
         }
 
         .jurisdiction-card {
             background: var(--surface);
-            padding: 1.5rem;
+            padding: 1.25rem;
             border-radius: var(--radius);
-            border: 1px solid var(--border-light);
+            border: 1px solid var(--border);
             box-shadow: var(--shadow);
             text-align: center;
-            transition: border-color 0.2s ease;
-        }
-
-        .jurisdiction-card:hover {
-            border-color: var(--accent);
         }
 
         .jurisdiction-card i {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--accent);
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
 
         .jurisdiction-card h4 {
             color: var(--primary);
-            margin-bottom: 0.35rem;
-            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
         }
 
         .jurisdiction-card p {
@@ -495,12 +331,10 @@
             color: #94a3b8;
             text-align: center;
             padding: 2.5rem 0;
-            font-size: 0.85rem;
-            border-top: 1px solid var(--primary-light);
+            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
-            .hero { flex-direction: column-reverse; align-items: flex-start; }
             .hero-text h1 { font-size: 2rem; }
             .nav-links { gap: 1rem; overflow-x: auto; }
             .company-row { flex-direction: column; }
@@ -522,38 +356,18 @@
                     <a href="mailto:michaeljeffreyolvis@gmail.com"><i class="fas fa-envelope"></i> michaeljeffreyolvis@gmail.com</a>
                     <a href="tel:+639670218914"><i class="fas fa-phone"></i> +63 967 021 8914</a>
                     <a href="https://www.linkedin.com/in/mjolvis/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <span><i class="fas fa-map-marker-alt"></i> Metro Manila, PH</span>
+                    <span style="display: flex; align-items: center; gap: 0.5rem; color: #94a3b8; font-size: 0.9rem; margin-left: 0.25rem;">
+                        <i class="fas fa-map-marker-alt"></i> Valenzuela City, Metro Manila
+                    </span>
                 </div>
-            </div>
-            
-            <div class="profile-photo-container">
-                <img src="profile.jpg" alt="Michael Jeffrey Olvis Headshot">
             </div>
         </div>
     </header>
-
-    <div class="container">
-        <div class="metrics-bar">
-            <div class="metric-item">
-                <span class="metric-value">5+ Years</span>
-                <span class="metric-label">Engineering & Costing Exp.</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-value">4 Global</span>
-                <span class="metric-label">Jurisdictions (US, CA, AU, UK)</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-value">Infrastructure</span>
-                <span class="metric-label">Railways, Highways & High-Rise</span>
-            </div>
-        </div>
-    </div>
 
     <nav>
         <div class="container">
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects & Work</a></li>
                 <li><a href="#skills">Skills & Software</a></li>
                 <li><a href="#standards">Global Standards</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -562,74 +376,33 @@
     </nav>
 
     <div class="container">
-
         <section id="about">
-            <h2 class="section-title">Professional Profile</h2>
+            <h2 class="section-title">Professional Summary</h2>
             <div class="profile-card">
                 <p>
-                    Licensed Civil Engineer and Graduate Cost Consultant with specialized expertise in quantity surveying, cost management, estimation, and structural CAD detailing. Proven track record in quantifying detailed take-offs and compiling Bills of Quantities (BOQs) across major civil infrastructure, high-rise commercial developments, highways, rail systems, and structural fabrications. Proficient across international measurement standards (US, Canada, Australia, Europe) utilizing enterprise measurement tools including <strong>CostX</strong>, <strong>Bluebeam Revu</strong>, <strong>SAP</strong>, and <strong>Xero</strong>.
+                    Licensed Civil Engineer and Graduate Cost Consultant with hands-on experience in quantity surveying, cost management, estimation, and CAD detailing. Specialized in quantifying detailed take-offs and preparing Bills of Quantities (BOQs) across civil infrastructure, high-rise developments, highways, rail, and commercial construction. Proficient in global measurement standards (US, Canada, Australia, Europe) and modern cost management platforms including <strong>CostX</strong>, <strong>Bluebeam</strong>, <strong>SAP</strong>, and <strong>Xero</strong>.
                 </p>
             </div>
         </section>
 
-        <section id="projects">
-            <h2 class="section-title">Featured Projects & Portfolio</h2>
-            <div class="project-grid">
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="project1.jpg" alt="Infrastructure & Rail Estimation">
-                    </div>
-                    <div class="project-content">
-                        <span class="project-category">Civil Infrastructure</span>
-                        <h3>NSCR & Transit Infrastructure</h3>
-                        <p>Detailed material quantity take-offs, BOQ compilation, and cost trend monitoring for major rail and highway projects using CostX and Bluebeam.</p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="project2.jpg" alt="Metal Fabrication CAD">
-                    </div>
-                    <div class="project-content">
-                        <span class="project-category">Structural CAD Detailing</span>
-                        <h3>US Commercial Metal Fabrications</h3>
-                        <p>3D modeling, structural CAD working drawings, and estimation for commercial stairs, guardrails, and metal assemblies under US specifications.</p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="project3.jpg" alt="Commercial High-Rise">
-                    </div>
-                    <div class="project-content">
-                        <span class="project-category">High-Rise & Commercial</span>
-                        <h3>Cost Control & Commercial Management</h3>
-                        <p>Interim payment application administration, variation order tracking, and cloud-accounting cash flow reconciliation using SAP, Xero, and Odoo.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
         <section id="skills">
-            <h2 class="section-title">Core Competencies & Toolset</h2>
+            <h2 class="section-title">Core Competencies & Software Stack</h2>
             <div class="skills-grid">
                 
                 <div class="skill-card">
-                    <h3><i class="fas fa-calculator"></i> Quantity Surveying</h3>
+                    <h3><i class="fas fa-calculator"></i> Core Competencies</h3>
                     <div class="tags">
                         <span class="tag">Cost & Quantity Surveying</span>
-                        <span class="tag">Infrastructure Take-offs</span>
-                        <span class="tag">Structural CAD Detailing</span>
-                        <span class="tag">Project Management</span>
-                        <span class="tag">Financial Cash Flow Tracking</span>
+                        <span class="tag">Infrastructure Estimation</span>
+                        <span class="tag">3D Modeling & CAD</span>
+                        <span class="tag">Project & People Management</span>
+                        <span class="tag">Cost Analysis & Financial Tracking</span>
                         <span class="tag">Variation Order Control</span>
                     </div>
                 </div>
 
                 <div class="skill-card">
-                    <h3><i class="fas fa-drafting-compass"></i> Engineering Software</h3>
+                    <h3><i class="fas fa-laptop-code"></i> Specialized Software</h3>
                     <div class="tags">
                         <span class="tag">CostX</span>
                         <span class="tag">Bluebeam Revu</span>
@@ -642,11 +415,11 @@
                 </div>
 
                 <div class="skill-card">
-                    <h3><i class="fas fa-chart-line"></i> Enterprise Platforms</h3>
+                    <h3><i class="fas fa-chart-line"></i> Enterprise & Accounting</h3>
                     <div class="tags">
-                        <span class="tag">SAP Enterprise</span>
-                        <span class="tag">Xero Accounting</span>
-                        <span class="tag">Odoo ERP</span>
+                        <span class="tag">SAP</span>
+                        <span class="tag">Xero</span>
+                        <span class="tag">Odoo</span>
                         <span class="tag">MS Office Suite</span>
                         <span class="tag">Google Earth Pro</span>
                     </div>
@@ -666,7 +439,7 @@
                 <div class="jurisdiction-card">
                     <i class="fas fa-globe-americas"></i>
                     <h4>Canada</h4>
-                    <p>Infrastructure & Civil Quantity Measurement Standards</p>
+                    <p>Infrastructure & Civil Measurement Standards</p>
                 </div>
                 <div class="jurisdiction-card">
                     <i class="fas fa-globe-asia"></i>
@@ -692,13 +465,13 @@
                             <span class="date-badge">Mar 2024 – Present</span>
                         </div>
                         <div class="company-name">Arcadis GEC | Philippines</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Highways, Roads, Infrastructure & Vertical Projects</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Highways, Roads, Infrastructures and Vertical Projects</div>
                     </div>
                     <div class="timeline-body">
                         <ul>
-                            <li>Perform comprehensive quantity take-offs for major infrastructure projects including highways, roads, rail, and aviation across international jurisdictions (US, Canada, Australia, UK).</li>
+                            <li>Perform comprehensive quantity take-offs for major infrastructure projects, including highways, roads, rail, and aviation across international jurisdictions (US, Canada, Australia, UK).</li>
                             <li>Apply regional measurement standards to ensure strict accuracy and regulatory compliance in all quantity assessments.</li>
-                            <li>Leverage advanced tools such as CostX, Bluebeam, and Google Earth Pro to produce detailed workbooks and Bills of Quantities (BOQs).</li>
+                            <li>Leverage advanced tools such as CostX, Bluebeam, and Google Earth to produce detailed workbooks and Bills of Quantities (BOQs).</li>
                             <li>Manage end-to-end estimation workflows from initial measurements through to final pricing and tender submission compilation.</li>
                         </ul>
                     </div>
@@ -711,7 +484,7 @@
                             <span class="date-badge">Oct 2023 – Feb 2024</span>
                         </div>
                         <div class="company-name">MGS Inc. | Philippines</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">High-Rise Commercial Projects</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">High-Rise Projects</div>
                     </div>
                     <div class="timeline-body">
                         <ul>
@@ -747,14 +520,14 @@
                             <span class="date-badge">Jan 2021 – Apr 2022</span>
                         </div>
                         <div class="company-name">DATEM Inc. | Philippines</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">NSCR Infrastructure Project</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">NSCR Project - Infrastructure</div>
                     </div>
                     <div class="timeline-body">
                         <ul>
                             <li>Developed cost data, bid proposals, and contract negotiations to support competitive project acquisitions.</li>
                             <li>Evaluated subcontractor and vendor quotations against project specifications and budget constraints.</li>
                             <li>Monitored project financial trends, prepared weekly/monthly cost performance reports, and identified schedule and budget risks.</li>
-                            <li>Implemented standardized cost-recording procedures and change control protocols to maintain budget integrity.</li>
+                            <li>Implemented standardized cost-recording procedures and change control protocols to maintain budget integrity throughout the project lifecycle.</li>
                         </ul>
                     </div>
                 </div>
