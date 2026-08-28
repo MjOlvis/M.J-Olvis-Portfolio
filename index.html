@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Michael Jeffrey Olvis - Cost Consultant & QS Portfolio</title>
+  <title>Michael Jeffrey Olvis - Civil Engineer, Cost Consultant & CAD/3D Specialist</title>
   <style>
     /* --- CSS RESET & VARIABLES --- */
     * {
@@ -66,7 +66,7 @@
     p.description {
       color: var(--text-muted);
       font-size: 1.05rem;
-      max-width: 700px;
+      max-width: 750px;
       margin-bottom: 30px;
     }
 
@@ -249,7 +249,7 @@
       margin-bottom: 6px;
     }
 
-    /* --- BOQ SAMPLES GRID --- */
+    /* --- SAMPLES GRID --- */
     .boq-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -260,20 +260,28 @@
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 12px;
-      padding: 20px;
+      padding: 16px;
       text-decoration: none;
       color: var(--text-main);
       transition: border-color 0.2s ease, transform 0.2s ease;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 120px;
       cursor: pointer;
     }
 
     .boq-card:hover {
       border-color: var(--accent-color);
       transform: translateY(-2px);
+    }
+
+    .card-thumb {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      border: 1px solid var(--card-border);
     }
 
     .boq-number {
@@ -285,7 +293,7 @@
     .boq-title {
       font-size: 0.95rem;
       font-weight: 600;
-      margin: 8px 0 4px 0;
+      margin: 4px 0 2px 0;
     }
 
     .boq-sub {
@@ -300,7 +308,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(11, 19, 30, 0.85);
+      background: rgba(11, 19, 30, 0.88);
       backdrop-filter: blur(8px);
       display: flex;
       justify-content: center;
@@ -321,8 +329,8 @@
       border: 1px solid var(--card-border);
       border-radius: 16px;
       width: 90%;
-      max-width: 900px;
-      max-height: 85vh;
+      max-width: 950px;
+      max-height: 90vh;
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -364,22 +372,19 @@
 
     .sample-preview-box {
       width: 100%;
-      min-height: 350px;
-      background: #0d1724;
-      border: 1px dashed var(--card-border);
-      border-radius: 8px;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      color: var(--text-muted);
-      text-align: center;
-      padding: 20px;
+      align-items: center;
+      background: #091018;
+      border-radius: 8px;
+      padding: 12px;
+      border: 1px solid var(--card-border);
     }
 
     .sample-preview-box img {
       max-width: 100%;
-      height: auto;
+      max-height: 65vh;
+      object-fit: contain;
       border-radius: 6px;
     }
 
@@ -441,16 +446,16 @@
     <section>
       <div class="hero-grid">
         <div>
-          <div class="section-tag">Licensed Civil Engineer • Cost Consultant • TPICQS</div>
+          <div class="section-tag">Licensed Civil Engineer • Cost Consultant • CAD & 3D Specialist</div>
           <h1>MICHAEL JEFFREY OLVIS</h1>
           <p class="description">
-            Licensed Civil Engineer and Graduate Cost Consultant specializing in detailed quantity take-offs, BOQ preparation, and cost management across civil infrastructure, high-rise, and commercial developments.
+            Licensed Civil Engineer and Cost Consultant specializing in detailed quantity take-offs, BOQ preparation, <strong>2D CAD working drawings/detailing</strong>, and <strong>3D architectural modeling & rendering</strong> for commercial, infrastructure, and vertical developments.
           </p>
 
           <div class="cta-buttons">
             <a href="https://www.linkedin.com/in/mjolvis/" target="_blank" class="btn btn-primary">LinkedIn Profile</a>
             <a href="#experience" class="btn btn-secondary">Work Experience</a>
-            <a href="#samples" class="btn btn-secondary">BOQ Samples</a>
+            <a href="#samples" class="btn btn-secondary">View Sample Works</a>
           </div>
 
           <div class="stats-row">
@@ -459,28 +464,31 @@
               <p>US, AU, UK, CA & PH</p>
             </div>
             <div class="stat-card">
-              <h3>Core Trades</h3>
-              <p>Civil, Infra, High-Rise & Metals</p>
+              <h3>Core Capabilities</h3>
+              <p>QS, Costing, CAD Detailing & 3D Modeling</p>
             </div>
             <div class="stat-card">
-              <h3>Primary Tools</h3>
-              <p>CostX • Bluebeam • CAD • Revit</p>
+              <h3>Software Suite</h3>
+              <p>CostX • Bluebeam • AutoCAD • Revit • SketchUp</p>
             </div>
           </div>
         </div>
 
         <div class="hero-preview">
-          <div class="preview-header">Core Software Proficiency</div>
+          <div class="preview-header">Core Technical Capabilities</div>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">
+            End-to-end expertise spanning precision estimation, detailed shop drawings, and photorealistic 3D architectural renders.
+          </p>
           <div class="tool-pills">
             <span class="pill">CostX</span>
             <span class="pill">Bluebeam</span>
             <span class="pill">AutoCAD</span>
             <span class="pill">Revit</span>
+            <span class="pill">SketchUp (3D Modeling)</span>
+            <span class="pill">V-Ray / Architectural Rendering</span>
             <span class="pill">PlanSwift</span>
-            <span class="pill">SketchUp</span>
             <span class="pill">SAP</span>
             <span class="pill">Xero</span>
-            <span class="pill">Odoo</span>
             <span class="pill">Google Earth</span>
             <span class="pill">PV Solar Design</span>
           </div>
@@ -492,10 +500,10 @@
       <div class="section-tag">About & Professional Summary</div>
       <div class="about-card">
         <p>
-          I am a Licensed Civil Engineer and Graduate Cost Consultant with hands-on experience in quantity surveying, cost management, estimation, and CAD detailing. Specialized in quantifying detailed take-offs and preparing Bills of Quantities (BOQs) across civil infrastructure, high-rise developments, highways, rail, and commercial construction.
+          I am a Licensed Civil Engineer and Graduate Cost Consultant with multi-disciplinary expertise in quantity surveying, cost management, estimation, <strong>2D CAD drafting/detailing</strong>, and <strong>3D architectural modeling & visual rendering</strong>. Specialized in quantifying detailed take-offs and generating Bills of Quantities (BOQs) across civil infrastructure, high-rise developments, highways, rail, and commercial construction.
         </p>
         <p>
-          Proficient in global measurement standards across the US, Canada, Australia, Europe, and the UK.
+          Experienced in producing precision structural shop drawings (such as specialized steel stairs, fences, and guardrails) and developing high-quality 3D architectural models and photorealistic renderings for bidding, presentation, and construction execution. Proficient in global measurement standards across the US, Canada, Australia, Europe, and the UK.
         </p>
         
         <div class="contact-info">
@@ -509,7 +517,7 @@
     <section id="experience">
       <div class="section-tag">Career History</div>
       <h2>Professional Experience</h2>
-      <p class="description">Demonstrated track record in cost consulting, infrastructure measurement, and tender estimation.</p>
+      <p class="description">Demonstrated track record in cost consulting, infrastructure measurement, structural CAD detailing, and 3D architectural modeling.</p>
 
       <div class="experience-list">
         
@@ -549,7 +557,7 @@
         <div class="exp-card">
           <div class="exp-header">
             <div>
-              <div class="exp-title">Freelance Construction Estimator & CAD Detailer</div>
+              <div class="exp-title">Freelance Construction Estimator & CAD / 3D Detailer</div>
               <div class="exp-company">ASALTD Inc. | Florida, USA (Metal Fabrication)</div>
             </div>
             <span class="exp-date">Jun 2022 – Jun 2024</span>
@@ -557,8 +565,9 @@
           <p style="font-size:0.85rem; color: var(--accent-color); margin-bottom: 8px;">High-Rise, Commercial & Residential Projects</p>
           <ul class="exp-bullets">
             <li>Prepared detailed material estimates, BOQs, and unit pricing for US-based bidding and tender processes.</li>
+            <li>Generated precise 2D CAD working drawings, structural fabrication details, and 3D architectural models for specialized stairs, fences, and guardrails to support on-site fabrication and construction execution.</li>
+            <li>Produced visual 3D renderings to assist clients, contractors, and bidders in visualizing scope details and design intent prior to fabrication.</li>
             <li>Liaised directly with clients, contractors, and bidders to clarify project scope and tender requirements.</li>
-            <li>Generated detailed CAD working drawings and structural details for specialized Stairs, Fences, and Guardrails to support on-site execution.</li>
           </ul>
         </div>
 
@@ -583,88 +592,82 @@
     </section>
 
     <section id="samples">
-      <div class="section-tag">BOQ & Takeoff Library</div>
-      <h2>Clickable Sample Library</h2>
+      <div class="section-tag">Sample Works Library</div>
+      <h2>Takeoffs, 2D CAD & 3D Renderings</h2>
       <p class="description">
-        Click on any category to view sample quantity takeoffs, BOQ structures, and measurement sheets directly inside the site.
+        Browse through actual sample outputs including quantity workbooks, estimating dashboards, CAD detailing layouts, and 3D architectural renderings. Click any thumbnail to expand.
       </p>
 
       <div class="boq-grid">
-        <div class="boq-card" onclick="openSampleModal('Civil & Demolition', 'Earthworks, site preparation, cut & fill quantity takeoffs.', 'sample-civil.jpg')">
+        <div class="boq-card" onclick="openSampleModal('cad')">
+          <img src="samples.png" alt="CAD Detailing & Takeoffs" class="card-thumb" />
           <div class="boq-number">01</div>
-          <div class="boq-title">Civil & Demolition</div>
-          <div class="boq-sub">Earthworks & Site prep</div>
+          <div class="boq-title">CAD Detailing & Takeoffs</div>
+          <div class="boq-sub">2D Working Drawings & BOQ</div>
         </div>
-        <div class="boq-card" onclick="openSampleModal('Highways & Pavements', 'Asphalt, base coarse, curbing, and road furniture measurements.', 'sample-highways.jpg')">
+
+        <div class="boq-card" onclick="openSampleModal('rendering')">
+          <img src="about.jpg" alt="3D Architectural Rendering" class="card-thumb" />
           <div class="boq-number">02</div>
-          <div class="boq-title">Highways & Pavements</div>
-          <div class="boq-sub">Roadways & Surfacing</div>
+          <div class="boq-title">3D Modeling & Rendering</div>
+          <div class="boq-sub">Architectural Visualizations</div>
         </div>
-        <div class="boq-card" onclick="openSampleModal('Structural Concrete', 'Concrete volume, rebar weight schedule, and formwork area.', 'sample-concrete.jpg')">
+
+        <div class="boq-card" onclick="openSampleModal('dashboard')">
+          <img src="dashboard.jpg" alt="Cost Analytics Dashboard" class="card-thumb" />
           <div class="boq-number">03</div>
-          <div class="boq-title">Structural Concrete</div>
-          <div class="boq-sub">Reinforcement & Formwork</div>
+          <div class="boq-title">Estimating Dashboard</div>
+          <div class="boq-sub">Cost Tracking & Analytics</div>
         </div>
-        <div class="boq-card" onclick="openSampleModal('Metalworks & Stairs', 'Specialized stairs, fences, guardrails, and structural steel detailing.', 'sample-metal.jpg')">
+
+        <div class="boq-card" onclick="openSampleModal('exposure')">
+          <img src="project exposure.jpg" alt="Project Exposure" class="card-thumb" />
           <div class="boq-number">04</div>
-          <div class="boq-title">Metalworks & Stairs</div>
-          <div class="boq-sub">Fences, Guardrails, Details</div>
+          <div class="boq-title">Project Exposure</div>
+          <div class="boq-sub">Commercial & High-Rise</div>
         </div>
-        <div class="boq-card" onclick="openSampleModal('Architectural Finishes', 'Wall, floor, and ceiling finish schedules and quantity summaries.', 'sample-finishes.jpg')">
+
+        <div class="boq-card" onclick="openSampleModal('workflow')">
+          <img src="workflows.png" alt="Estimating Process" class="card-thumb" />
           <div class="boq-number">05</div>
-          <div class="boq-title">Architectural Finishes</div>
-          <div class="boq-sub">Floors, Walls & Ceilings</div>
-        </div>
-        <div class="boq-card" onclick="openSampleModal('Doors, Windows & Glazing', 'Comprehensive door/window schedules and glazing hardware counts.', 'sample-doors.jpg')">
-          <div class="boq-number">06</div>
-          <div class="boq-title">Doors, Windows & Glazing</div>
-          <div class="boq-sub">Schedule takeoffs</div>
-        </div>
-        <div class="boq-card" onclick="openSampleModal('Variation Orders & Cashflow', 'Contract modification pricing, interim billings, and cashflow reports.', 'sample-cashflow.jpg')">
-          <div class="boq-number">07</div>
-          <div class="boq-title">Variation Orders</div>
-          <div class="boq-sub">Cost Claims & Cashflow</div>
-        </div>
-        <div class="boq-card" onclick="openSampleModal('CAD Detailing Outputs', 'Structural details and shop drawings for fabrication and installation.', 'sample-cad.jpg')">
-          <div class="boq-number">08</div>
-          <div class="boq-title">CAD Detailing Outputs</div>
-          <div class="boq-sub">Working drawings & details</div>
+          <div class="boq-title">Workflow & Process</div>
+          <div class="boq-sub">QA / Control Standards</div>
         </div>
       </div>
     </section>
 
     <section>
       <div class="section-tag">Process</div>
-      <h2>Estimating Workflow</h2>
+      <h2>Workflow & Execution Standard</h2>
 
       <div class="workflow-grid">
         <div class="workflow-step">
           <span class="step-number">01</span>
-          <span class="step-desc">Review drawings and specifications</span>
+          <span class="step-desc">Review drawings, specs & 3D spatial constraints</span>
         </div>
         <div class="workflow-step">
           <span class="step-number">02</span>
-          <span class="step-desc">Confirm scope and identify missing details</span>
+          <span class="step-desc">Confirm scope and identify missing design details</span>
         </div>
         <div class="workflow-step">
           <span class="step-number">03</span>
-          <span class="step-desc">Verify drawing scale and measurement accuracy</span>
+          <span class="step-desc">Verify drawing scale & model dimensions</span>
         </div>
         <div class="workflow-step">
           <span class="step-number">04</span>
-          <span class="step-desc">Perform detailed quantity takeoffs</span>
+          <span class="step-desc">Perform takeoffs & drafting / 3D detail modeling</span>
         </div>
         <div class="workflow-step">
           <span class="step-number">05</span>
-          <span class="step-desc">Cross-check quantities and bulk totals</span>
+          <span class="step-desc">Cross-check quantities, bulk totals & shop drawings</span>
         </div>
         <div class="workflow-step">
           <span class="step-number">06</span>
-          <span class="step-desc">Prepare structured BOQ for pricing</span>
+          <span class="step-desc">Prepare structured BOQ & render presentations</span>
         </div>
         <div class="workflow-step">
           <span class="step-number">07</span>
-          <span class="step-desc">Final QA review before submission</span>
+          <span class="step-desc">Final QA review before tender submission</span>
         </div>
       </div>
     </section>
@@ -715,8 +718,61 @@
   </div>
 
   <script>
-    function openSampleModal(title, description, imageFile) {
-      document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalDesc').innerText = description;
+    const sampleData = {
+      "cad": {
+        title: "CAD Detailing & Quantity Takeoffs",
+        desc: "2D structural drafting, shop drawings, specialized steel stair/handrail details, and structured BOQ sheets.",
+        imgSrc: "samples.png"
+      },
+      "rendering": {
+        title: "3D Modeling & Architectural Rendering",
+        desc: "Photorealistic 3D exterior and interior architectural visualizations created using SketchUp, Revit, and rendering engines.",
+        imgSrc: "about.jpg"
+      },
+      "dashboard": {
+        title: "Estimating & Cost Analytics Dashboard",
+        desc: "Custom project dashboards tracking material costs, tender price comparisons, and quantity variance analysis.",
+        imgSrc: "dashboard.jpg"
+      },
+      "exposure": {
+        title: "Commercial & High-Rise Project Exposure",
+        desc: "Architectural and structural visual models showcasing high-rise, infrastructure, and commercial project scope.",
+        imgSrc: "project exposure.jpg"
+      },
+      "workflow": {
+        title: "Estimating & Detailing Workflow Standard",
+        desc: "Systematic multi-step process ensuring precision scale verification, complete scope capture, and structured QA checks.",
+        imgSrc: "workflows.png"
+      }
+    };
+
+    function openSampleModal(key) {
+      const data = sampleData[key];
+      if (!data) return;
+
+      document.getElementById('modalTitle').innerText = data.title;
+      document.getElementById('modalDesc').innerText = data.desc;
       
-      const previewBox
+      const previewBox = document.getElementById('modalPreview');
+      previewBox.innerHTML = `
+        <img src="${data.imgSrc}" alt="${data.title}" />
+      `;
+
+      document.getElementById('sampleModal').classList.add('active');
+    }
+
+    function closeSampleModal() {
+      document.getElementById('sampleModal').classList.remove('active');
+    }
+
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeSampleModal();
+    });
+
+    document.getElementById('sampleModal').addEventListener('click', function(e) {
+      if (e.target === this) closeSampleModal();
+    });
+  </script>
+
+</body>
+</html>
