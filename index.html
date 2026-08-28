@@ -3,280 +3,492 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Jeffrey Olvis | Blueprint Dashboard</title>
+    <title>Michael Jeffrey Olvis | Licensed Civil Engineer & Cost Consultant</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #070d19;
-            --card-bg: rgba(15, 23, 42, 0.75);
-            --neon-blue: #00f2fe;
-            --neon-cyan: #4facfe;
-            --border-glow: rgba(0, 242, 254, 0.3);
-            --text-main: #f8fafc;
-            --text-sub: #94a3b8;
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text: #334155;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --radius: 8px;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', -apple-system, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background-color: var(--bg-dark);
-            background-image: 
-                radial-gradient(circle at 50% 0%, rgba(0, 242, 254, 0.1) 0%, transparent 50%),
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 100% 100%, 30px 30px, 30px 30px;
-            color: var(--text-main);
-            min-height: 100vh;
-            padding: 2rem;
-        }
-
-        /* 6-Card Dashboard Layout Grid */
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        /* Tech Glass Card Base */
-        .tech-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--border-glow);
-            border-radius: 12px;
-            padding: 1.5rem;
-            position: relative;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5),
-                        inset 0 0 15px rgba(0, 242, 254, 0.05);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .tech-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--neon-blue);
-            box-shadow: 0 12px 40px 0 rgba(0, 242, 254, 0.15);
-        }
-
-        /* Top HUD Dots Deco */
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.25rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding-bottom: 0.75rem;
-        }
-
-        .card-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .card-title i {
-            color: var(--neon-blue);
-        }
-
-        .hud-dots {
-            display: flex;
-            gap: 4px;
-        }
-
-        .hud-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .hud-dot.active {
-            background: var(--neon-blue);
-            box-shadow: 0 0 8px var(--neon-blue);
-        }
-
-        /* Card Content Styling */
-        .card-body {
-            flex-grow: 1;
-            font-size: 0.9rem;
-            color: var(--text-sub);
+            background-color: var(--bg);
+            color: var(--text);
             line-height: 1.6;
         }
 
-        /* Profile Special Card */
-        .profile-hero {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
 
-        .avatar-ring {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            border: 2px solid var(--neon-blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 242, 254, 0.1);
-            font-size: 1.8rem;
-            color: var(--neon-blue);
-            box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+        /* Header / Hero */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 4.5rem 0 3.5rem;
         }
 
-        .badge-list {
+        .hero {
             display: flex;
-            gap: 0.5rem;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2.5rem;
             flex-wrap: wrap;
-            margin-top: 0.5rem;
         }
 
-        .tech-badge {
-            background: rgba(0, 242, 254, 0.1);
-            border: 1px solid rgba(0, 242, 254, 0.3);
-            color: var(--neon-cyan);
-            padding: 0.25rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        .hero-text h2 {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Profile Photo Frame */
+        .profile-photo-container {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            background: var(--primary-light);
+            flex-shrink: 0;
+        }
+
+        .profile-photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badges {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge-cert {
+            background: rgba(37, 99, 235, 0.2);
+            color: #60a5fa;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
             font-weight: 600;
         }
 
-        /* Blueprint Spec Graphic Placeholders */
-        .graphic-container {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px dashed rgba(0, 242, 254, 0.2);
+        .hero-contact {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-contact a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.5rem 1rem;
             border-radius: 6px;
-            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.2s;
+        }
+
+        .hero-contact a:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            padding: 1rem 0;
+            display: block;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        /* Main Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* About / Summary */
+        .profile-card {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Projects & Photo Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background-color: #e2e8f0;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.03);
+        }
+
+        .project-content {
+            padding: 1.25rem;
+        }
+
+        .project-category {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--accent);
+            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Competencies & Tools Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .skill-card h3 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .skill-card h3 i {
+            color: var(--accent);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #eff6ff;
+            color: #1e40af;
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            top: 0.3rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--surface);
+        }
+
+        .timeline-header {
+            margin-bottom: 0.75rem;
+        }
+
+        .company-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .timeline-header h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .company-name {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .date-badge {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: #f1f5f9;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .timeline-body ul {
+            list-style: square;
+            padding-left: 1.2rem;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .timeline-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Global Standards Grid */
+        .jurisdiction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .jurisdiction-card {
+            background: var(--surface);
+            padding: 1.25rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
             text-align: center;
-            margin-top: 1rem;
         }
 
-        /* Responsive Layout adjustment */
-        @media (max-width: 1024px) {
-            .dashboard-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .jurisdiction-card i {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
         }
 
-        @media (max-width: 640px) {
-            .dashboard-grid {
-                grid-template-columns: 1fr;
-            }
+        .jurisdiction-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .jurisdiction-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #94a3b8;
+            text-align: center;
+            padding: 2.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero { flex-direction: column-reverse; align-items: flex-start; }
+            .hero-text h1 { font-size: 2rem; }
+            .nav-links { gap: 1rem; overflow-x: auto; }
+            .company-row { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
-    <div class="dashboard-grid">
-
-        <!-- Card 1: Profile Header -->
-        <div class="tech-card">
-            <div class="card-header">
-                <div class="card-title"><i class="fas fa-id-card"></i> Profile Overview</div>
-                <div class="hud-dots"><span class="hud-dot active"></span><span class="hud-dot"></span><span class="hud-dot"></span></div>
+    <header>
+        <div class="container hero">
+            <div class="hero-text">
+                <h1>Michael Jeffrey Olvis</h1>
+                <h2>Licensed Civil Engineer & Graduate Cost Consultant</h2>
+                <div class="badges">
+                    <span class="badge-cert"><i class="fas fa-certificate"></i> PRC Licensed Civil Engineer</span>
+                    <span class="badge-cert"><i class="fas fa-user-check"></i> TPICQS Member</span>
+                </div>
+                <div class="hero-contact">
+                    <a href="mailto:michaeljeffreyolvis@gmail.com"><i class="fas fa-envelope"></i> michaeljeffreyolvis@gmail.com</a>
+                    <a href="tel:+639670218914"><i class="fas fa-phone"></i> +63 967 021 8914</a>
+                    <a href="https://www.linkedin.com/in/mjolvis/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <span style="display: flex; align-items: center; gap: 0.5rem; color: #94a3b8; font-size: 0.9rem; margin-left: 0.25rem;">
+                        <i class="fas fa-map-marker-alt"></i> Valenzuela City, Metro Manila
+                    </span>
+                </div>
             </div>
-            <div class="card-body">
-                <div class="profile-hero">
-                    <div class="avatar-ring"><i class="fas fa-user-gear"></i></div>
-                    <div>
-                        <h2 style="color: #fff; font-size: 1.2rem;">Michael Jeffrey Olvis</h2>
-                        <p style="font-size: 0.8rem; color: var(--neon-cyan);">Licensed Civil Engineer</p>
+            
+            <div class="profile-photo-container">
+                <img src="profile.jpg" alt="Michael Jeffrey Olvis Headshot">
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects & Work</a></li>
+                <li><a href="#skills">Skills & Software</a></li>
+                <li><a href="#standards">Global Standards</a></li>
+                <li><a href="#experience">Experience</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <h2 class="section-title">Professional Summary</h2>
+            <div class="profile-card">
+                <p>
+                    Licensed Civil Engineer and Graduate Cost Consultant with hands-on experience in quantity surveying, cost management, estimation, and CAD detailing. Specialized in quantifying detailed take-offs and preparing Bills of Quantities (BOQs) across civil infrastructure, high-rise developments, highways, rail, and commercial construction. Proficient in global measurement standards (US, Canada, Australia, Europe) and modern cost management platforms including <strong>CostX</strong>, <strong>Bluebeam</strong>, <strong>SAP</strong>, and <strong>Xero</strong>.
+                </p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Featured Projects & Portfolio</h2>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="project1.jpg" alt="Infrastructure Estimation">
                     </div>
-                </div>
-                <div class="badge-list">
-                    <span class="tech-badge">PRC Board Passer</span>
-                    <span class="tech-badge">TPICQS Member</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 2: International Experience -->
-        <div class="tech-card">
-            <div class="card-header">
-                <div class="card-title"><i class="fas fa-globe-americas"></i> Arcadis GEC</div>
-                <div class="hud-dots"><span class="hud-dot active"></span><span class="hud-dot active"></span><span class="hud-dot"></span></div>
-            </div>
-            <div class="card-body">
-                <p><strong>Graduate Cost Consultant</strong> (Mar 2024 – Present)</p>
-                <p style="margin-top: 0.5rem;">Infrastructure QTO & BOQ assessments spanning multiple global regions:</p>
-                <div class="graphic-container">
-                    <i class="fas fa-plane-departure" style="color: var(--neon-blue); font-size: 1.5rem;"></i>
-                    <p style="font-size: 0.75rem; margin-top: 0.25rem;">US | Canada | Australia | UK</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 3: Core Competencies -->
-        <div class="tech-card">
-            <div class="card-header">
-                <div class="card-title"><i class="fas fa-sliders"></i> Core Competencies</div>
-                <div class="hud-dots"><span class="hud-dot active"></span><span class="hud-dot active"></span><span class="hud-dot active"></span></div>
-            </div>
-            <div class="card-body">
-                <div class="badge-list">
-                    <span class="tech-badge">Quantity Take-Offs</span>
-                    <span class="tech-badge">CostX / Bluebeam</span>
-                    <span class="tech-badge">CAD Detailing</span>
-                    <span class="tech-badge">SAP & Xero</span>
-                    <span class="tech-badge">3D Modeling</span>
-                    <span class="tech-badge">Variation Orders</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 4: Featured Projects -->
-        <div class="tech-card">
-            <div class="card-header">
-                <div class="card-title"><i class="fas fa-cubes"></i> Featured Projects</div>
-                <div class="hud-dots"><span class="hud-dot active"></span><span class="hud-dot"></span><span class="hud-dot"></span></div>
-            </div>
-            <div class="card-body">
-                <p><strong>ASALTD Inc. (Florida, USA)</strong></p>
-                <p>Metal Fabrication detailing, structural stairs, fences, and guardrails.</p>
-                <div class="graphic-container">
-                    <i class="fas fa-drafting-compass" style="color: var(--neon-cyan); font-size: 1.5rem;"></i>
-                    <p style="font-size: 0.75rem; margin-top: 0.25rem;">Architectural Blueprint Schematics</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 5: Standards & Compliance -->
-        <div class="tech-card">
-            <div class="card-header">
-                <div class="card-title"><i class="fas fa-book-bookmark"></i> Global Standards</div>
-                <div class="hud-dots"><span class="hud-dot active"></span><span class="hud-dot active"></span><span class="hud-dot"></span></div>
-            </div>
-            <div class="card-body">
-                <p>Strict alignment with regional measurement codebooks across civil engineering jurisdictions worldwide.</p>
-            </div>
-        </div>
-
-        <!-- Card 6: Professional Summary -->
-        <div class="tech-card">
-            <div class="card-header">
-                <div class="card-title"><i class="fas fa-file-contract"></i> Executive Summary</div>
-                <div class="hud-dots"><span class="hud-dot active"></span><span class="hud-dot active"></span><span class="hud-dot active"></span></div>
-            </div>
-            <div class="card-body">
-                <p>Cost Management Specialist with end-to-end project lifecycle oversight across commercial high-rise, rail, and highway developments.</p>
-            </div>
-        </div>
-
-    </div>
-
-</body>
-</html>
+                    <div class="project-content">
+                        <span class="project-category">Infrastructure & Rail</span>
+                        <h3>NSCR & International Infrastructure</h3>
+                        <p>Detailed quantity take-offs,
