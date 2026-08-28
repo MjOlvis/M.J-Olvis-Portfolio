@@ -246,3 +246,528 @@
             bottom: -6px;
             width: 45px;
             height: 3px;
+            background: var(--accent-gold);
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-light);
+            border-left: 4px solid var(--accent);
+            font-size: 1.05rem;
+            line-height: 1.75;
+        }
+
+        /* Projects Portfolio Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -4px rgba(15, 23, 42, 0.12);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 190px;
+            overflow: hidden;
+            background-color: #cbd5e1;
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.04);
+        }
+
+        .project-content {
+            padding: 1.25rem;
+        }
+
+        .project-category {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            letter-spacing: 0.05em;
+            margin-bottom: 0.3rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .project-content p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Competencies & Tools Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-light);
+            border-top: 3px solid var(--primary-light);
+        }
+
+        .skill-card h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .skill-card h3 i {
+            color: var(--accent);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #f1f5f9;
+            color: #334155;
+            border: 1px solid #cbd5e1;
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Timeline Experience */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.25rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            top: 0.35rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            border: 3px solid var(--surface);
+        }
+
+        .timeline-header {
+            margin-bottom: 0.75rem;
+        }
+
+        .company-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .timeline-header h3 {
+            color: var(--primary);
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .company-name {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .date-badge {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: #f1f5f9;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-weight: 600;
+            border: 1px solid var(--border-light);
+        }
+
+        .timeline-body ul {
+            list-style: square;
+            padding-left: 1.2rem;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .timeline-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Global Standards Grid */
+        .jurisdiction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .jurisdiction-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: border-color 0.2s ease;
+        }
+
+        .jurisdiction-card:hover {
+            border-color: var(--accent);
+        }
+
+        .jurisdiction-card i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .jurisdiction-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.35rem;
+            font-size: 1.05rem;
+        }
+
+        .jurisdiction-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #94a3b8;
+            text-align: center;
+            padding: 2.5rem 0;
+            font-size: 0.85rem;
+            border-top: 1px solid var(--primary-light);
+        }
+
+        @media (max-width: 768px) {
+            .hero { flex-direction: column-reverse; align-items: flex-start; }
+            .hero-text h1 { font-size: 2rem; }
+            .nav-links { gap: 1rem; overflow-x: auto; }
+            .company-row { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container hero">
+            <div class="hero-text">
+                <h1>Michael Jeffrey Olvis</h1>
+                <h2>Licensed Civil Engineer & Graduate Cost Consultant</h2>
+                <div class="badges">
+                    <span class="badge-cert"><i class="fas fa-certificate"></i> PRC Licensed Civil Engineer</span>
+                    <span class="badge-cert"><i class="fas fa-user-check"></i> TPICQS Member</span>
+                </div>
+                <div class="hero-contact">
+                    <a href="mailto:michaeljeffreyolvis@gmail.com"><i class="fas fa-envelope"></i> michaeljeffreyolvis@gmail.com</a>
+                    <a href="tel:+639670218914"><i class="fas fa-phone"></i> +63 967 021 8914</a>
+                    <a href="https://www.linkedin.com/in/mjolvis/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <span><i class="fas fa-map-marker-alt"></i> Metro Manila, PH</span>
+                </div>
+            </div>
+            
+            <div class="profile-photo-container">
+                <img src="profile.jpg" alt="Michael Jeffrey Olvis Headshot">
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="metrics-bar">
+            <div class="metric-item">
+                <span class="metric-value">5+ Years</span>
+                <span class="metric-label">Engineering & Costing Exp.</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-value">4 Global</span>
+                <span class="metric-label">Jurisdictions (US, CA, AU, UK)</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-value">Infrastructure</span>
+                <span class="metric-label">Railways, Highways & High-Rise</span>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects & Work</a></li>
+                <li><a href="#skills">Skills & Software</a></li>
+                <li><a href="#standards">Global Standards</a></li>
+                <li><a href="#experience">Experience</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <section id="about">
+            <h2 class="section-title">Professional Profile</h2>
+            <div class="profile-card">
+                <p>
+                    Licensed Civil Engineer and Graduate Cost Consultant with specialized expertise in quantity surveying, cost management, estimation, and structural CAD detailing. Proven track record in quantifying detailed take-offs and compiling Bills of Quantities (BOQs) across major civil infrastructure, high-rise commercial developments, highways, rail systems, and structural fabrications. Proficient across international measurement standards (US, Canada, Australia, Europe) utilizing enterprise measurement tools including <strong>CostX</strong>, <strong>Bluebeam Revu</strong>, <strong>SAP</strong>, and <strong>Xero</strong>.
+                </p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Featured Projects & Portfolio</h2>
+            <div class="project-grid">
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="project1.jpg" alt="Infrastructure & Rail Estimation">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Civil Infrastructure</span>
+                        <h3>NSCR & Transit Infrastructure</h3>
+                        <p>Detailed material quantity take-offs, BOQ compilation, and cost trend monitoring for major rail and highway projects using CostX and Bluebeam.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="project2.jpg" alt="Metal Fabrication CAD">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Structural CAD Detailing</span>
+                        <h3>US Commercial Metal Fabrications</h3>
+                        <p>3D modeling, structural CAD working drawings, and estimation for commercial stairs, guardrails, and metal assemblies under US specifications.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="project3.jpg" alt="Commercial High-Rise">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">High-Rise & Commercial</span>
+                        <h3>Cost Control & Commercial Management</h3>
+                        <p>Interim payment application administration, variation order tracking, and cloud-accounting cash flow reconciliation using SAP, Xero, and Odoo.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Core Competencies & Toolset</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-card">
+                    <h3><i class="fas fa-calculator"></i> Quantity Surveying</h3>
+                    <div class="tags">
+                        <span class="tag">Cost & Quantity Surveying</span>
+                        <span class="tag">Infrastructure Take-offs</span>
+                        <span class="tag">Structural CAD Detailing</span>
+                        <span class="tag">Project Management</span>
+                        <span class="tag">Financial Cash Flow Tracking</span>
+                        <span class="tag">Variation Order Control</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3><i class="fas fa-drafting-compass"></i> Engineering Software</h3>
+                    <div class="tags">
+                        <span class="tag">CostX</span>
+                        <span class="tag">Bluebeam Revu</span>
+                        <span class="tag">AutoCAD</span>
+                        <span class="tag">Revit</span>
+                        <span class="tag">PlanSwift</span>
+                        <span class="tag">SketchUp</span>
+                        <span class="tag">PV Solar Design</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3><i class="fas fa-chart-line"></i> Enterprise Platforms</h3>
+                    <div class="tags">
+                        <span class="tag">SAP Enterprise</span>
+                        <span class="tag">Xero Accounting</span>
+                        <span class="tag">Odoo ERP</span>
+                        <span class="tag">MS Office Suite</span>
+                        <span class="tag">Google Earth Pro</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="standards">
+            <h2 class="section-title">International Jurisdiction Experience</h2>
+            <div class="jurisdiction-grid">
+                <div class="jurisdiction-card">
+                    <i class="fas fa-flag-usa"></i>
+                    <h4>United States</h4>
+                    <p>US Bidding, Metal Fab Estimates, Stairs & Guardrails CAD Specs</p>
+                </div>
+                <div class="jurisdiction-card">
+                    <i class="fas fa-globe-americas"></i>
+                    <h4>Canada</h4>
+                    <p>Infrastructure & Civil Quantity Measurement Standards</p>
+                </div>
+                <div class="jurisdiction-card">
+                    <i class="fas fa-globe-asia"></i>
+                    <h4>Australia</h4>
+                    <p>Highways, Roads & Rail Quantity Take-Offs</p>
+                </div>
+                <div class="jurisdiction-card">
+                    <i class="fas fa-globe-europe"></i>
+                    <h4>United Kingdom / Europe</h4>
+                    <p>Aviation, Infrastructure BOQ & Regional Codes</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="company-row">
+                            <h3>Graduate Cost Consultant</h3>
+                            <span class="date-badge">Mar 2024 – Present</span>
+                        </div>
+                        <div class="company-name">Arcadis GEC | Philippines</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Highways, Roads, Infrastructure & Vertical Projects</div>
+                    </div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Perform comprehensive quantity take-offs for major infrastructure projects including highways, roads, rail, and aviation across international jurisdictions (US, Canada, Australia, UK).</li>
+                            <li>Apply regional measurement standards to ensure strict accuracy and regulatory compliance in all quantity assessments.</li>
+                            <li>Leverage advanced tools such as CostX, Bluebeam, and Google Earth Pro to produce detailed workbooks and Bills of Quantities (BOQs).</li>
+                            <li>Manage end-to-end estimation workflows from initial measurements through to final pricing and tender submission compilation.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="company-row">
+                            <h3>Cost Engineer</h3>
+                            <span class="date-badge">Oct 2023 – Feb 2024</span>
+                        </div>
+                        <div class="company-name">MGS Inc. | Philippines</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">High-Rise Commercial Projects</div>
+                    </div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Managed commercial functions for active construction projects, overseeing interim payment applications, client billings, and variation order administration.</li>
+                            <li>Controlled procurement activities, including material requisition, vendor/supplier engagement, and credit management.</li>
+                            <li>Tracked and analyzed project cash flows using cloud accounting software (Xero and Odoo) to ensure financial transparency.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="company-row">
+                            <h3>Freelance Construction Estimator & CAD Detailer</h3>
+                            <span class="date-badge">Jun 2022 – Jun 2024</span>
+                        </div>
+                        <div class="company-name">ASALTD Inc. | Florida, USA (Metal Fabrication)</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">High-Rise, Commercial & Residential Projects</div>
+                    </div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Prepared detailed material estimates, BOQs, and unit pricing for US-based bidding and tender processes.</li>
+                            <li>Liaised directly with clients, contractors, and bidders to clarify project scope and tender requirements.</li>
+                            <li>Generated detailed CAD working drawings and structural details to support on-site construction execution, specializing in stairs, fences, and guardrails.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="company-row">
+                            <h3>Cost Engineer</h3>
+                            <span class="date-badge">Jan 2021 – Apr 2022</span>
+                        </div>
+                        <div class="company-name">DATEM Inc. | Philippines</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">NSCR Infrastructure Project</div>
+                    </div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Developed cost data, bid proposals, and contract negotiations to support competitive project acquisitions.</li>
+                            <li>Evaluated subcontractor and vendor quotations against project specifications and budget constraints.</li>
+                            <li>Monitored project financial trends, prepared weekly/monthly cost performance reports, and identified schedule and budget risks.</li>
+                            <li>Implemented standardized cost-recording procedures and change control protocols to maintain budget integrity.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michael Jeffrey Olvis | Licensed Civil Engineer & Cost Consultant</p>
+        </div>
+    </footer>
+
+</body>
+</html>
