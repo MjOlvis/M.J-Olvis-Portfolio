@@ -140,26 +140,119 @@
       color: var(--text-muted);
     }
 
+    /* --- HERO SLIDER STYLES --- */
     .hero-preview {
       background-color: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 16px;
-      padding: 24px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 16px;
     }
 
     .preview-header {
       font-size: 1.1rem;
       font-weight: 600;
-      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      background-color: #080d14;
+      border: 1px solid var(--card-border);
+    }
+
+    .carousel-slide {
+      display: none;
+      position: relative;
+      aspect-ratio: 16 / 10;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .caption {
+      color: #ffffff;
+      font-size: 0.85rem;
+      padding: 6px 12px;
+      position: absolute;
+      bottom: 35px;
+      left: 15px;
+      background: rgba(11, 19, 30, 0.75);
+      backdrop-filter: blur(4px);
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Slider Arrows */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 10px 14px;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      transition: 0.3s ease;
+      user-select: none;
+      background-color: rgba(11, 19, 30, 0.6);
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .next { right: 8px; }
+    .prev { left: 8px; }
+
+    .prev:hover, .next:hover {
+      background-color: var(--accent-color);
+      color: #0b131e;
+    }
+
+    /* Slider Dots */
+    .dots-container {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 8px;
+      width: 8px;
+      margin: 0 3px;
+      background-color: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .active, .dot:hover {
+      background-color: var(--accent-color);
+    }
+
+    .fade {
+      animation-name: fade;
+      animation-duration: 0.8s;
+    }
+
+    @keyframes fade {
+      from { opacity: 0.4; } 
+      to { opacity: 1; }
     }
 
     .tool-pills {
       display: flex;
       gap: 8px;
-      margin-top: 15px;
       flex-wrap: wrap;
     }
 
@@ -475,10 +568,67 @@
         </div>
 
         <div class="hero-preview">
-          <div class="preview-header">Core Technical Capabilities</div>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">
-            End-to-end expertise spanning precision estimation, detailed shop drawings, and photorealistic 3D architectural renders.
-          </p>
+          <div class="preview-header">3D Project Showcase</div>
+          
+          <div class="carousel-container">
+            <div class="carousel-slide fade">
+              <img src="FNIGHT3.jpg" alt="Storefront Entrance">
+              <div class="caption">Storefront Entrance</div>
+            </div>
+            <div class="carousel-slide fade">
+              <img src="HW.jpg" alt="Dining & Service Area">
+              <div class="caption">Dining & Service Area</div>
+            </div>
+            <div class="carousel-slide fade">
+              <img src="KITCHEN1.jpg" alt="Prep Kitchen">
+              <div class="caption">Prep Kitchen</div>
+            </div>
+            <div class="carousel-slide fade">
+              <img src="RR2.jpg" alt="Restroom Layout">
+              <div class="caption">Restroom Layout</div>
+            </div>
+            <div class="carousel-slide fade">
+              <img src="STOR3.jpg" alt="Backroom Storage">
+              <div class="caption">Backroom Storage</div>
+            </div>
+            <div class="carousel-slide fade">
+              <img src="F2.jpg" alt="Exterior Elevation">
+              <div class="caption">Exterior Elevation</div>
+            </div>
+            <div class="carousel-slide fade">
+              <img src="Grotto.jpg" alt="Stone Accent Feature & Staircase">
+              <div class="caption">Stone Accent Feature & Staircase</div>
+            </div>
+            <div class="carousel-slide fade">
+              <img src="8.jpg" alt="Outdoor Balcony Terrace">
+              <div class="caption">Outdoor Balcony Terrace</div>
+            </div>
+            <div class="carousel-slide fade">
+              <img src="3rd floor.jpg" alt="Upper Level Balcony">
+              <div class="caption">Upper Level Balcony</div>
+            </div>
+            <div class="carousel-slide fade">
+              <img src="10.jpg" alt="Facade & Entry Gate">
+              <div class="caption">Facade & Entry Gate</div>
+            </div>
+
+            <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+            <a class="next" onclick="moveSlide(1)">&#10095;</a>
+
+            <div class="dots-container">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+              <span class="dot" onclick="currentSlide(4)"></span>
+              <span class="dot" onclick="currentSlide(5)"></span>
+              <span class="dot" onclick="currentSlide(6)"></span>
+              <span class="dot" onclick="currentSlide(7)"></span>
+              <span class="dot" onclick="currentSlide(8)"></span>
+              <span class="dot" onclick="currentSlide(9)"></span>
+              <span class="dot" onclick="currentSlide(10)"></span>
+            </div>
+          </div>
+
           <div class="tool-pills">
             <span class="pill">CostX</span>
             <span class="pill">Bluebeam</span>
@@ -711,13 +861,58 @@
       </div>
       <div class="modal-body">
         <p id="modalDesc" style="color: var(--text-muted); margin-bottom: 16px; font-size: 0.95rem;"></p>
-        <div class="sample-preview-box" id="modalPreview">
-          </div>
+        <div class="sample-preview-box" id="modalPreview"></div>
       </div>
     </div>
   </div>
 
   <script>
+    /* Carousel Logic */
+    let slideIndex = 0;
+    let autoSlideTimer;
+
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("carousel-slide");
+      let dots = document.getElementsByClassName("dot");
+
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1; }    
+      
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      slides[slideIndex - 1].style.display = "block";  
+      dots[slideIndex - 1].className += " active";
+
+      autoSlideTimer = setTimeout(showSlides, 4000); 
+    }
+
+    function moveSlide(n) {
+      clearTimeout(autoSlideTimer);
+      let slides = document.getElementsByClassName("carousel-slide");
+      slideIndex += n - 1;
+      
+      if (slideIndex < 0) {
+        slideIndex = slides.length - 1;
+      }
+      showSlides();
+    }
+
+    function currentSlide(n) {
+      clearTimeout(autoSlideTimer);
+      slideIndex = n - 1;
+      showSlides();
+    }
+
+    /* Modal Lightbox Logic */
     const sampleData = {
       "cad": {
         title: "CAD Detailing & Quantity Takeoffs",
@@ -754,9 +949,7 @@
       document.getElementById('modalDesc').innerText = data.desc;
       
       const previewBox = document.getElementById('modalPreview');
-      previewBox.innerHTML = `
-        <img src="${data.imgSrc}" alt="${data.title}" />
-      `;
+      previewBox.innerHTML = `<img src="${data.imgSrc}" alt="${data.title}" />`;
 
       document.getElementById('sampleModal').classList.add('active');
     }
